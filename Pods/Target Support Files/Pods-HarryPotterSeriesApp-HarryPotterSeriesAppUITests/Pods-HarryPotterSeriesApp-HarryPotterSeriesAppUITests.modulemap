@@ -1,0 +1,6 @@
+framework module Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests {
+  umbrella header "Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
