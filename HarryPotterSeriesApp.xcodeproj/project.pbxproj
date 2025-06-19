@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E829FB022E02AC5E00D3C299 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E829FB012E02AC5E00D3C299 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E8F961FF2DFBEAA100EF6673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E829FB022E02AC5E00D3C299 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,7 @@
 			);
 			name = HarryPotterSeriesApp;
 			packageProductDependencies = (
+				E829FB012E02AC5E00D3C299 /* SnapKit */,
 			);
 			productName = HarryPotterSeriesApp;
 			productReference = E8F961F12DFBEAA000EF6673 /* HarryPotterSeriesApp.app */;
@@ -177,6 +183,9 @@
 			);
 			mainGroup = E8F961E82DFBEAA000EF6673;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E8F961F22DFBEAA000EF6673 /* Products */;
 			projectDirPath = "";
@@ -540,6 +549,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E829FB012E02AC5E00D3C299 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8F961E92DFBEAA000EF6673 /* Project object */;
 }

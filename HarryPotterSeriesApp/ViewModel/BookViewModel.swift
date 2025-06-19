@@ -2,26 +2,23 @@ import Foundation
 
 final class BookViewModel {
     
-    private let dataService: DataService
+    private let dataService: DataServiceProtocol
     private(set) var books: [Book] = []
-    private(set) var currentIndex: Int = 0 {
-        didSet {
-            self.bindBookToView?()
-        }
+    private(set) var currentIndex = 0 {
+        didSet { onUpdate?() }
     }
-    
-    var bindBookToView: (() -> Void)?
-    var bindError: ((String) -> Void)?
+
+    var onUpdate: (() -> Void)?
+    var onError: ((String) -> Void)?
     
     var currentBook: Book? {
-        guard books.indices.contains(currentIndex) else { return nil }
-        return books[currentIndex]
+        books.indices.contains(currentIndex) ? books[currentIndex] : nil
     }
     
-    init(dataService: DataService = DataService()) {
+    init(dataService: DataServiceProtocol = DataService()) {
         self.dataService = dataService
     }
-    
+
     func fetchBooks() {
         dataService.loadBooks { [weak self] result in
             DispatchQueue.main.async {
@@ -30,43 +27,29 @@ final class BookViewModel {
                     self?.books = books
                     self?.currentIndex = 0
                 case .failure(let error):
-                    self?.bindError?(error.localizedDescription)
+                    self?.onError?(error.localizedDescription)
                 }
             }
         }
     }
-    
-    func showNextBook() {
+
+    func nextBook() {
         guard !books.isEmpty else { return }
         currentIndex = (currentIndex + 1) % books.count
     }
-    
-    func formattedReleaseDate() -> String? {
-        guard let dateString = currentBook?.release_date else { return nil }
-        return DateFormatter.bookReleaseDateFormatter.string(from: dateString)
-    }
-}
 
-private extension DateFormatter {
-    static let bookReleaseDateFormatter: DateFormatter = {
+    func formattedDate() -> String? {
+        guard let dateString = currentBook?.release_date else { return nil }
+        
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let date = inputFormatter.date(from: dateString) else { return nil }
         
         let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "MMMM d, yyyy"
+        outputFormatter.dateStyle = .medium
+        outputFormatter.timeStyle = .none
         
-        return DateFormatter.createFormatter(input: inputFormatter, output: outputFormatter)
-    }()
-    
-    static func createFormatter(input: DateFormatter, output: DateFormatter) -> DateFormatter {
-        output.locale = Locale(identifier: "en_US_POSIX")
-        return output
-    }
-    
-    func string(from dateString: String) -> String {
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd"
-        guard let date = inputFormatter.date(from: dateString) else { return dateString }
-        return self.string(from: date)
+        return outputFormatter.string(from: date)
     }
 }
