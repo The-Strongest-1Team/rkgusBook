@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests : NSObject
+@end
+@implementation PodsDummy_Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests
+@end
