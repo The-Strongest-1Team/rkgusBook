@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		30F47ECAFD00F77E2F5E9432 /* Pods_HarryPotterSeriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE3AC8515F6F4169C5F7080 /* Pods_HarryPotterSeriesApp.framework */; };
 		C65782993BBD4338190BDA4C /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DDCC9301EDDE645E2033F1 /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework */; };
 		F83F857B308EABBB8B88EAE2 /* Pods_HarryPotterSeriesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F31F84EF9BE7D49312790386 /* Pods_HarryPotterSeriesAppTests.framework */; };
+=======
+		E829FB022E02AC5E00D3C299 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E829FB012E02AC5E00D3C299 /* SnapKit */; };
+>>>>>>> 98d120f (Lv.3 책 정보 시각화 완료22)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				30F47ECAFD00F77E2F5E9432 /* Pods_HarryPotterSeriesApp.framework in Frameworks */,
+=======
+				E829FB022E02AC5E00D3C299 /* SnapKit in Frameworks */,
+>>>>>>> 98d120f (Lv.3 책 정보 시각화 완료22)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +155,12 @@
 				E8F961F32DFBEAA000EF6673 /* HarryPotterSeriesApp */,
 			);
 			name = HarryPotterSeriesApp;
+<<<<<<< HEAD
+=======
+			packageProductDependencies = (
+				E829FB012E02AC5E00D3C299 /* SnapKit */,
+			);
+>>>>>>> 98d120f (Lv.3 책 정보 시각화 완료22)
 			productName = HarryPotterSeriesApp;
 			productReference = E8F961F12DFBEAA000EF6673 /* HarryPotterSeriesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +236,9 @@
 			);
 			mainGroup = E8F961E82DFBEAA000EF6673;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E8F961F22DFBEAA000EF6673 /* Products */;
 			projectDirPath = "";
@@ -694,6 +711,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E829FB012E02AC5E00D3C299 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E829FB002E02AC5E00D3C299 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8F961E92DFBEAA000EF6673 /* Project object */;
 }

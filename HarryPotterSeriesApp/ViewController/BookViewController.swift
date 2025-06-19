@@ -8,53 +8,47 @@ final class BookViewController: UIViewController {
     override func loadView() {
         view = bookView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
         setupActions()
         viewModel.fetchBooks()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        bookView.headerTitleLabel.preferredMaxLayoutWidth = view.frame.width - 32
-        bookView.titleLabel.preferredMaxLayoutWidth = bookView.titleLabel.frame.width
-    }
-    
+
     private func setupBindings() {
-        viewModel.bindBookToView = { [weak self] in
+        viewModel.onUpdate = { [weak self] in
             guard let self = self, let book = self.viewModel.currentBook else { return }
-            self.updateUI(with: book)
+            self.updateUI(book)
         }
-        
-        viewModel.bindError = { [weak self] errorMessage in
-            self?.showErrorAlert(message: errorMessage)
+
+        viewModel.onError = { [weak self] error in
+            self?.presentAlert(message: error)
         }
     }
-    
+
     private func setupActions() {
-        bookView.seriesNumberButton.addTarget(self, action: #selector(seriesButtonTapped), for: .touchUpInside)
+        bookView.seriesNumberButton.addTarget(self, action: #selector(didTapNext), for: .touchUpInside)
     }
-    
-    private func updateUI(with book: Book) {
+
+    private func updateUI(_ book: Book) {
         bookView.headerTitleLabel.text = book.title
         bookView.titleLabel.text = book.title
         bookView.authorLabel.text = book.author
         bookView.pagesLabel.text = "\(book.pages)"
-        bookView.releaseLabel.text = viewModel.formattedReleaseDate() ?? book.release_date
-        
-        let imageName = "harrypotter\(viewModel.currentIndex + 1)"
-        bookView.bookImageView.image = UIImage(named: imageName)
+        bookView.releaseLabel.text = viewModel.formattedDate() ?? book.release_date
+        bookView.bookImageView.image = UIImage(named: "harrypotter\(viewModel.currentIndex + 1)")
         bookView.seriesNumberButton.setTitle("\(viewModel.currentIndex + 1)", for: .normal)
+        bookView.dedicationLabel.text = book.dedication
+        bookView.summaryLabel.text = book.summary
     }
 
-    @objc private func seriesButtonTapped() {
-        viewModel.showNextBook()
+    @objc private func didTapNext() {
+        viewModel.nextBook()
     }
-    
-    private func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "데이터 로드 실패", message: message, preferredStyle: .alert)
+
+    private func presentAlert(message: String) {
+        let alert = UIAlertController(title: "에러", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         present(alert, animated: true)
     }

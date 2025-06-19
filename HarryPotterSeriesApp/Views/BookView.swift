@@ -1,177 +1,157 @@
-//
-//  BookView.swift
-//  HarryPotterSeriesApp
-//
-//  Created by 노가현 on 6/18/25.
-//
-
 import UIKit
+import SnapKit //
 
 final class BookView: UIView {
     
-    let headerTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var headerTitleLabel = createLabel(font: .boldSystemFont(ofSize: 24), textColor: .black, numberOfLines: 0, textAlignment: .center)
     
-    let seriesNumberButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 20
-        button.layer.masksToBounds = true
-        return button
-    }()
+    lazy var seriesNumberButton = createButton(titleColor: .white, backgroundColor: .systemBlue, font: .boldSystemFont(ofSize: 18), cornerRadius: 20)
     
-    let bookImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        iv.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 8
-        iv.backgroundColor = .lightGray
-        return iv
-    }()
+    lazy var bookImageView = createImageView(contentMode: .scaleAspectFill, cornerRadius: 8, backgroundColor: .lightGray)
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .black
-        label.numberOfLines = 0
-        return label
-    }()
+    lazy var titleLabel = createLabel(font: .boldSystemFont(ofSize: 20), textColor: .black, numberOfLines: 0)
     
-    let authorTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .black
-        label.text = "Author"
-        return label
-    }()
+    private lazy var authorTitleLabel = createLabel(font: .boldSystemFont(ofSize: 16), textColor: .black, text: "Author")
+    lazy var authorLabel = createLabel(font: .systemFont(ofSize: 18), textColor: .darkGray)
+        
+    private lazy var releaseTitleLabel = createLabel(font: .boldSystemFont(ofSize: 14), textColor: .black, text: "Released")
+    lazy var releaseLabel = createLabel(font: .systemFont(ofSize: 14), textColor: .gray)
     
-    let authorLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
-        label.textColor = .darkGray
-        return label
-    }()
+    private lazy var pagesTitleLabel = createLabel(font: .boldSystemFont(ofSize: 14), textColor: .black, text: "Pages")
+    lazy var pagesLabel = createLabel(font: .systemFont(ofSize: 14), textColor: .gray)
     
-    let releaseTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .black
-        label.text = "Released"
-        return label
-    }()
+    lazy var dedicationTitleLabel = createLabel(font: .boldSystemFont(ofSize: 18), textColor: .black, text: "Dedication")
+    lazy var dedicationLabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray, numberOfLines: 0)
     
-    let releaseLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .gray
-        return label
-    }()
+    lazy var summaryTitleLabel = createLabel(font: .boldSystemFont(ofSize: 18), textColor: .black, text: "Summary")
+    lazy var summaryLabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray, numberOfLines: 0)
     
-    let pagesTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .black
-        label.text = "Pages"
-        return label
-    }()
+    private lazy var mainStackView = createStackView(axis: .horizontal, spacing: 20, alignment: .top)
+    private lazy var textStackView = createStackView(axis: .vertical, spacing: 12, alignment: .leading)
     
-    let pagesLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .gray
-        return label
-    }()
+    private lazy var authorStack = createStackView(axis: .horizontal, spacing: 8, alignment: .firstBaseline)
+    private lazy var releaseStack = createStackView(axis: .horizontal, spacing: 8, alignment: .firstBaseline)
+    private lazy var pagesStack = createStackView(axis: .horizontal, spacing: 8, alignment: .firstBaseline)
+    
+    private lazy var dedicationStackView = createStackView(axis: .vertical, spacing: 8, alignment: .fill)
+    private lazy var summaryStackView = createStackView(axis: .vertical, spacing: 8, alignment: .fill)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) 구현되지 않음")
     }
     
-    private func setupLayout() {
+    private func setupUI() {
         backgroundColor = .white
-        
-        addSubview(headerTitleLabel)
-        addSubview(seriesNumberButton)
-        
-        NSLayoutConstraint.activate([
-            headerTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            headerTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            headerTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
-            seriesNumberButton.topAnchor.constraint(equalTo: headerTitleLabel.bottomAnchor, constant: 10),
-            seriesNumberButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            seriesNumberButton.widthAnchor.constraint(equalToConstant: 40),
-            seriesNumberButton.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
-        let mainStackView = UIStackView()
-        mainStackView.axis = .horizontal
-        mainStackView.spacing = 20
-        mainStackView.alignment = .top
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(mainStackView)
-        
+        setupHierarchy()
+        setupConstraints()
+        configureContentPriorities()
+    }
+    
+    private func setupHierarchy() {
+        [headerTitleLabel, seriesNumberButton, mainStackView, dedicationStackView, summaryStackView].forEach {
+            addSubview($0)
+        }
+
         mainStackView.addArrangedSubview(bookImageView)
-        
-        let textStackView = UIStackView()
-        textStackView.axis = .vertical
-        textStackView.spacing = 12
-        textStackView.alignment = .leading
-        textStackView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.addArrangedSubview(textStackView)
-        
+
         textStackView.addArrangedSubview(titleLabel)
-        
-        let authorStack = UIStackView()
-        authorStack.axis = .horizontal
-        authorStack.spacing = 8
-        authorStack.alignment = .firstBaseline
-        authorStack.addArrangedSubview(authorTitleLabel)
-        authorStack.addArrangedSubview(authorLabel)
         textStackView.addArrangedSubview(authorStack)
-        
-        let releaseStack = UIStackView()
-        releaseStack.axis = .horizontal
-        releaseStack.spacing = 8
-        releaseStack.alignment = .firstBaseline
-        releaseStack.addArrangedSubview(releaseTitleLabel)
-        releaseStack.addArrangedSubview(releaseLabel)
         textStackView.addArrangedSubview(releaseStack)
-        
-        let pagesStack = UIStackView()
-        pagesStack.axis = .horizontal
-        pagesStack.spacing = 8
-        pagesStack.alignment = .firstBaseline
-        pagesStack.addArrangedSubview(pagesTitleLabel)
-        pagesStack.addArrangedSubview(pagesLabel)
         textStackView.addArrangedSubview(pagesStack)
+
+        [authorTitleLabel, authorLabel].forEach { authorStack.addArrangedSubview($0) }
+        [releaseTitleLabel, releaseLabel].forEach { releaseStack.addArrangedSubview($0) }
+        [pagesTitleLabel, pagesLabel].forEach { pagesStack.addArrangedSubview($0) }
+
+        dedicationStackView.addArrangedSubview(dedicationTitleLabel)
+        dedicationStackView.addArrangedSubview(dedicationLabel)
+
+        summaryStackView.addArrangedSubview(summaryTitleLabel)
+        summaryStackView.addArrangedSubview(summaryLabel)
+    }
+    
+    private func setupConstraints() {
+        headerTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
         
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: seriesNumberButton.bottomAnchor, constant: 20),
-            mainStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)
-        ])
+        seriesNumberButton.snp.makeConstraints { make in
+            make.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(40)
+        }
         
-        bookImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        bookImageView.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(150)
+        }
+
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalTo(seriesNumberButton.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        dedicationStackView.snp.makeConstraints { make in
+            make.top.equalTo(mainStackView.snp.bottom).offset(24)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        summaryStackView.snp.makeConstraints { make in
+            make.top.equalTo(dedicationStackView.snp.bottom).offset(24)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+    }
+
+    private func configureContentPriorities() {
+        bookImageView.setContentHuggingPriority(.required, for: .horizontal)
         bookImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
         textStackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textStackView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    }
+}
+
+private extension BookView {
+    func createLabel(font: UIFont, textColor: UIColor, numberOfLines: Int = 1, textAlignment: NSTextAlignment = .left, text: String? = nil) -> UILabel {
+        let label = UILabel()
+        label.font = font
+        label.textColor = textColor
+        label.numberOfLines = numberOfLines
+        label.textAlignment = textAlignment
+        label.text = text
+        return label
+    }
+
+    func createButton(titleColor: UIColor, backgroundColor: UIColor, font: UIFont, cornerRadius: CGFloat) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitleColor(titleColor, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.titleLabel?.font = font
+        button.layer.cornerRadius = cornerRadius
+        button.layer.masksToBounds = true
+        return button
+    }
+
+    func createImageView(contentMode: UIView.ContentMode, cornerRadius: CGFloat, backgroundColor: UIColor) -> UIImageView {
+        let imageView = UIImageView()
+        imageView.contentMode = contentMode
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = cornerRadius
+        imageView.backgroundColor = backgroundColor
+        return imageView
+    }
+
+    func createStackView(axis: NSLayoutConstraint.Axis, spacing: CGFloat, alignment: UIStackView.Alignment) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = axis
+        stackView.spacing = spacing
+        stackView.alignment = alignment
+        return stackView
     }
 }
