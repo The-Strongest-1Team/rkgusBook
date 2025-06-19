@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30F47ECAFD00F77E2F5E9432 /* Pods_HarryPotterSeriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE3AC8515F6F4169C5F7080 /* Pods_HarryPotterSeriesApp.framework */; };
+		C65782993BBD4338190BDA4C /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DDCC9301EDDE645E2033F1 /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework */; };
+		F83F857B308EABBB8B88EAE2 /* Pods_HarryPotterSeriesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F31F84EF9BE7D49312790386 /* Pods_HarryPotterSeriesAppTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8F961FF2DFBEAA100EF6673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8F961E92DFBEAA000EF6673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8F961F02DFBEAA000EF6673;
+			remoteInfo = HarryPotterSeriesApp;
+		};
+		E8F962092DFBEAA100EF6673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8F961E92DFBEAA000EF6673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8F961F02DFBEAA000EF6673;
+			remoteInfo = HarryPotterSeriesApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BBAE70567BAA5FD76672764 /* Pods-HarryPotterSeriesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesAppTests.release.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesAppTests/Pods-HarryPotterSeriesAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BE3AC8515F6F4169C5F7080 /* Pods_HarryPotterSeriesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotterSeriesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		848407C11F549C94372ED183 /* Pods-HarryPotterSeriesAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesAppTests.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesAppTests/Pods-HarryPotterSeriesAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		98DDCC9301EDDE645E2033F1 /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78BD3333F12E0AA7E87EAC6 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD65458195E1FF567E19E95E /* Pods-HarryPotterSeriesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesApp.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesApp/Pods-HarryPotterSeriesApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DFE8C97B76738E4F35F5D672 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.release.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E763C20F9A34A9B032EEDF61 /* Pods-HarryPotterSeriesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterSeriesApp.release.xcconfig"; path = "Target Support Files/Pods-HarryPotterSeriesApp/Pods-HarryPotterSeriesApp.release.xcconfig"; sourceTree = "<group>"; };
+		E8F961F12DFBEAA000EF6673 /* HarryPotterSeriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterSeriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F961FE2DFBEAA100EF6673 /* HarryPotterSeriesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarryPotterSeriesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F962082DFBEAA100EF6673 /* HarryPotterSeriesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarryPotterSeriesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31F84EF9BE7D49312790386 /* Pods_HarryPotterSeriesAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotterSeriesAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E8F961F32DFBEAA000EF6673 /* HarryPotterSeriesApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = HarryPotterSeriesApp;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8F961EE2DFBEAA000EF6673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F47ECAFD00F77E2F5E9432 /* Pods_HarryPotterSeriesApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F961FB2DFBEAA100EF6673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F83F857B308EABBB8B88EAE2 /* Pods_HarryPotterSeriesAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F962052DFBEAA100EF6673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C65782993BBD4338190BDA4C /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		401DC676E9B73C812DAB58CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BE3AC8515F6F4169C5F7080 /* Pods_HarryPotterSeriesApp.framework */,
+				98DDCC9301EDDE645E2033F1 /* Pods_HarryPotterSeriesApp_HarryPotterSeriesAppUITests.framework */,
+				F31F84EF9BE7D49312790386 /* Pods_HarryPotterSeriesAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86E8008A32249A023C0D6611 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD65458195E1FF567E19E95E /* Pods-HarryPotterSeriesApp.debug.xcconfig */,
+				E763C20F9A34A9B032EEDF61 /* Pods-HarryPotterSeriesApp.release.xcconfig */,
+				B78BD3333F12E0AA7E87EAC6 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.debug.xcconfig */,
+				DFE8C97B76738E4F35F5D672 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.release.xcconfig */,
+				848407C11F549C94372ED183 /* Pods-HarryPotterSeriesAppTests.debug.xcconfig */,
+				3BBAE70567BAA5FD76672764 /* Pods-HarryPotterSeriesAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8F961E82DFBEAA000EF6673 = {
+			isa = PBXGroup;
+			children = (
+				E8F961F32DFBEAA000EF6673 /* HarryPotterSeriesApp */,
+				E8F961F22DFBEAA000EF6673 /* Products */,
+				86E8008A32249A023C0D6611 /* Pods */,
+				401DC676E9B73C812DAB58CB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E8F961F22DFBEAA000EF6673 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8F961F12DFBEAA000EF6673 /* HarryPotterSeriesApp.app */,
+				E8F961FE2DFBEAA100EF6673 /* HarryPotterSeriesAppTests.xctest */,
+				E8F962082DFBEAA100EF6673 /* HarryPotterSeriesAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8F961F02DFBEAA000EF6673 /* HarryPotterSeriesApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8F962122DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesApp" */;
+			buildPhases = (
+				0760D1B0F4FB6A7B1672CA94 /* [CP] Check Pods Manifest.lock */,
+				E8F961ED2DFBEAA000EF6673 /* Sources */,
+				E8F961EE2DFBEAA000EF6673 /* Frameworks */,
+				E8F961EF2DFBEAA000EF6673 /* Resources */,
+				AAB5A292D52C012D93762117 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E8F961F32DFBEAA000EF6673 /* HarryPotterSeriesApp */,
+			);
+			name = HarryPotterSeriesApp;
+			productName = HarryPotterSeriesApp;
+			productReference = E8F961F12DFBEAA000EF6673 /* HarryPotterSeriesApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8F961FD2DFBEAA100EF6673 /* HarryPotterSeriesAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8F962152DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesAppTests" */;
+			buildPhases = (
+				9A2B8395E33CC51B4A0BD556 /* [CP] Check Pods Manifest.lock */,
+				E8F961FA2DFBEAA100EF6673 /* Sources */,
+				E8F961FB2DFBEAA100EF6673 /* Frameworks */,
+				E8F961FC2DFBEAA100EF6673 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8F962002DFBEAA100EF6673 /* PBXTargetDependency */,
+			);
+			name = HarryPotterSeriesAppTests;
+			productName = HarryPotterSeriesAppTests;
+			productReference = E8F961FE2DFBEAA100EF6673 /* HarryPotterSeriesAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8F962072DFBEAA100EF6673 /* HarryPotterSeriesAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8F962182DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesAppUITests" */;
+			buildPhases = (
+				B463460FE63E9B89A8BCB854 /* [CP] Check Pods Manifest.lock */,
+				E8F962042DFBEAA100EF6673 /* Sources */,
+				E8F962052DFBEAA100EF6673 /* Frameworks */,
+				E8F962062DFBEAA100EF6673 /* Resources */,
+				A0F6C9E7ED845AA64C42B819 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8F9620A2DFBEAA100EF6673 /* PBXTargetDependency */,
+			);
+			name = HarryPotterSeriesAppUITests;
+			productName = HarryPotterSeriesAppUITests;
+			productReference = E8F962082DFBEAA100EF6673 /* HarryPotterSeriesAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8F961E92DFBEAA000EF6673 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					E8F961F02DFBEAA000EF6673 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					E8F961FD2DFBEAA100EF6673 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = E8F961F02DFBEAA000EF6673;
+					};
+					E8F962072DFBEAA100EF6673 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = E8F961F02DFBEAA000EF6673;
+					};
+				};
+			};
+			buildConfigurationList = E8F961EC2DFBEAA000EF6673 /* Build configuration list for PBXProject "HarryPotterSeriesApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8F961E82DFBEAA000EF6673;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E8F961F22DFBEAA000EF6673 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8F961F02DFBEAA000EF6673 /* HarryPotterSeriesApp */,
+				E8F961FD2DFBEAA100EF6673 /* HarryPotterSeriesAppTests */,
+				E8F962072DFBEAA100EF6673 /* HarryPotterSeriesAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8F961EF2DFBEAA000EF6673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F961FC2DFBEAA100EF6673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F962062DFBEAA100EF6673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0760D1B0F4FB6A7B1672CA94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarryPotterSeriesApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A2B8395E33CC51B4A0BD556 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarryPotterSeriesAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0F6C9E7ED845AA64C42B819 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAB5A292D52C012D93762117 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp/Pods-HarryPotterSeriesApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp/Pods-HarryPotterSeriesApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarryPotterSeriesApp/Pods-HarryPotterSeriesApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B463460FE63E9B89A8BCB854 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8F961ED2DFBEAA000EF6673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F961FA2DFBEAA100EF6673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8F962042DFBEAA100EF6673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8F962002DFBEAA100EF6673 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8F961F02DFBEAA000EF6673 /* HarryPotterSeriesApp */;
+			targetProxy = E8F961FF2DFBEAA100EF6673 /* PBXContainerItemProxy */;
+		};
+		E8F9620A2DFBEAA100EF6673 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8F961F02DFBEAA000EF6673 /* HarryPotterSeriesApp */;
+			targetProxy = E8F962092DFBEAA100EF6673 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E8F962102DFBEAA100EF6673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y774295X22;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8F962112DFBEAA100EF6673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y774295X22;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8F962132DFBEAA100EF6673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD65458195E1FF567E19E95E /* Pods-HarryPotterSeriesApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8F962142DFBEAA100EF6673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E763C20F9A34A9B032EEDF61 /* Pods-HarryPotterSeriesApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8F962162DFBEAA100EF6673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848407C11F549C94372ED183 /* Pods-HarryPotterSeriesAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HarryPotterSeriesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HarryPotterSeriesApp";
+			};
+			name = Debug;
+		};
+		E8F962172DFBEAA100EF6673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BBAE70567BAA5FD76672764 /* Pods-HarryPotterSeriesAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HarryPotterSeriesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HarryPotterSeriesApp";
+			};
+			name = Release;
+		};
+		E8F962192DFBEAA100EF6673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78BD3333F12E0AA7E87EAC6 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HarryPotterSeriesApp;
+			};
+			name = Debug;
+		};
+		E8F9621A2DFBEAA100EF6673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE8C97B76738E4F35F5D672 /* Pods-HarryPotterSeriesApp-HarryPotterSeriesAppUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y774295X22;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxxru.HarryPotterSeriesAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HarryPotterSeriesApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8F961EC2DFBEAA000EF6673 /* Build configuration list for PBXProject "HarryPotterSeriesApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8F962102DFBEAA100EF6673 /* Debug */,
+				E8F962112DFBEAA100EF6673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8F962122DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8F962132DFBEAA100EF6673 /* Debug */,
+				E8F962142DFBEAA100EF6673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8F962152DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8F962162DFBEAA100EF6673 /* Debug */,
+				E8F962172DFBEAA100EF6673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8F962182DFBEAA100EF6673 /* Build configuration list for PBXNativeTarget "HarryPotterSeriesAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8F962192DFBEAA100EF6673 /* Debug */,
+				E8F9621A2DFBEAA100EF6673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8F961E92DFBEAA000EF6673 /* Project object */;
+}
