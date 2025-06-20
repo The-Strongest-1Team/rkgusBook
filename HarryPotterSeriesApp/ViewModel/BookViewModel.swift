@@ -4,17 +4,18 @@ final class BookViewModel {
     
     private let dataService: DataServiceProtocol
     private(set) var books: [Book] = []
+    
     private(set) var currentIndex = 0 {
         didSet { onUpdate?() }
     }
 
     var onUpdate: (() -> Void)?
     var onError: ((String) -> Void)?
-    
+
     var currentBook: Book? {
         books.indices.contains(currentIndex) ? books[currentIndex] : nil
     }
-    
+
     init(dataService: DataServiceProtocol = DataService()) {
         self.dataService = dataService
     }
@@ -40,16 +41,16 @@ final class BookViewModel {
 
     func formattedDate() -> String? {
         guard let dateString = currentBook?.release_date else { return nil }
-        
+
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
-        
+
         guard let date = inputFormatter.date(from: dateString) else { return nil }
-        
+
         let outputFormatter = DateFormatter()
         outputFormatter.dateStyle = .medium
         outputFormatter.timeStyle = .none
-        
+
         return outputFormatter.string(from: date)
     }
 }

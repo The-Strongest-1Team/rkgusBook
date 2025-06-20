@@ -41,6 +41,10 @@ final class BookViewController: UIViewController {
         bookView.seriesNumberButton.setTitle("\(viewModel.currentIndex + 1)", for: .normal)
         bookView.dedicationLabel.text = book.dedication
         bookView.summaryLabel.text = book.summary
+
+        // chapters에서 제목만 뽑아서 전달
+        let chapterTitles = book.chapters?.map { $0.title } ?? []
+        bookView.updateChapters(chapterTitles)
     }
 
     @objc private func didTapNext() {

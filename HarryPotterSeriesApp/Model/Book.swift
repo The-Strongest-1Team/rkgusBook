@@ -16,5 +16,9 @@ struct Book: Codable {
     let dedication: String
     let summary: String
     let wiki: String?
+    let chapters: [Chapter]?
 }
 
+struct Chapter: Codable {
+    let title: String
+}
