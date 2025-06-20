@@ -28,6 +28,14 @@ extension BookView {
 
         summaryStackView.addArrangedSubview(summaryTitleLabel)
         summaryStackView.addArrangedSubview(summaryLabel)
+        summaryStackView.addArrangedSubview(summaryButtonContainer)
+
+        chaptersTitleLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
+        chaptersStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
     }
 
     func setupConstraints() {
@@ -60,14 +68,6 @@ extension BookView {
             make.height.equalTo(150)
         }
 
-        chaptersTitleLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-        }
-
-        chaptersStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-        }
-
         dedicationStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(mainStackView.snp.bottom).offset(24)
@@ -76,6 +76,11 @@ extension BookView {
         summaryStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(dedicationStackView.snp.bottom).offset(24)
+        }
+
+        summaryButtonContainer.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(30)
         }
     }
 

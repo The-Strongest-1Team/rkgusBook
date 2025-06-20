@@ -29,6 +29,7 @@ final class BookViewController: UIViewController {
 
     private func setupActions() {
         bookView.seriesNumberButton.addTarget(self, action: #selector(didTapNext), for: .touchUpInside)
+        bookView.summaryToggleButton.addTarget(self, action: #selector(didTapSummaryToggle), for: .touchUpInside)
     }
 
     private func updateUI(_ book: Book) {
@@ -40,15 +41,19 @@ final class BookViewController: UIViewController {
         bookView.bookImageView.image = UIImage(named: "harrypotter\(viewModel.currentIndex + 1)")
         bookView.seriesNumberButton.setTitle("\(viewModel.currentIndex + 1)", for: .normal)
         bookView.dedicationLabel.text = book.dedication
-        bookView.summaryLabel.text = book.summary
+        
+        bookView.updateSummary(book.summary, bookIndex: viewModel.currentIndex)
 
-        // chapters에서 제목만 뽑아서 전달
         let chapterTitles = book.chapters?.map { $0.title } ?? []
         bookView.updateChapters(chapterTitles)
     }
 
     @objc private func didTapNext() {
         viewModel.nextBook()
+    }
+    
+    @objc private func didTapSummaryToggle() {
+        bookView.toggleSummary(bookIndex: viewModel.currentIndex)
     }
 
     private func presentAlert(message: String) {
