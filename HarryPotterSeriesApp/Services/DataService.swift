@@ -12,8 +12,7 @@ final class DataService: DataServiceProtocol {
 
     func loadBooks(completion: @escaping (Result<[Book], Error>) -> Void) {
         guard let path = Bundle.main.path(forResource: "data", ofType: "json") else {
-            completion(.failure(DataError.fileNotFound))
-            return
+            return completion(.failure(DataError.fileNotFound))
         }
 
         do {
