@@ -1,5 +1,3 @@
-import Foundation
-
 struct BookResponse: Codable {
     let data: [BookData]
 }

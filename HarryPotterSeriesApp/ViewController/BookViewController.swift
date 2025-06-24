@@ -1,18 +1,19 @@
 import UIKit
 
 final class BookViewController: UIViewController {
-    
     private let bookView = BookView()
     private let viewModel = BookViewModel()
-    
+
     override func loadView() {
         view = bookView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bookView.delegate = self
         setupBindings()
         setupActions()
+        bookView.setupSeriesButtons(count: 7)
         viewModel.fetchBooks()
     }
 
@@ -28,8 +29,7 @@ final class BookViewController: UIViewController {
     }
 
     private func setupActions() {
-        bookView.seriesNumberButton.addTarget(self, action: #selector(didTapNext), for: .touchUpInside)
-        bookView.summaryToggleButton.addTarget(self, action: #selector(didTapSummaryToggle), for: .touchUpInside)
+        bookView.summaryToggleButton.addTarget(self, action: #selector(didTapSummaryToggleButton), for: .touchUpInside)
     }
 
     private func updateUI(_ book: Book) {
@@ -39,20 +39,15 @@ final class BookViewController: UIViewController {
         bookView.pagesLabel.text = "\(book.pages)"
         bookView.releaseLabel.text = viewModel.formattedDate() ?? book.release_date
         bookView.bookImageView.image = UIImage(named: "harrypotter\(viewModel.currentIndex + 1)")
-        bookView.seriesNumberButton.setTitle("\(viewModel.currentIndex + 1)", for: .normal)
+        bookView.highlightSelectedButton(at: viewModel.currentIndex)
         bookView.dedicationLabel.text = book.dedication
-        
         bookView.updateSummary(book.summary, bookIndex: viewModel.currentIndex)
 
         let chapterTitles = book.chapters?.map { $0.title } ?? []
         bookView.updateChapters(chapterTitles)
     }
 
-    @objc private func didTapNext() {
-        viewModel.nextBook()
-    }
-    
-    @objc private func didTapSummaryToggle() {
+    @objc private func didTapSummaryToggleButton() {
         bookView.toggleSummary(bookIndex: viewModel.currentIndex)
     }
 
@@ -60,6 +55,16 @@ final class BookViewController: UIViewController {
         let alert = UIAlertController(title: "에러", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension BookViewController: BookViewDelegate {
+    func didTapSeriesButton(index: Int) {
+        viewModel.setBook(at: index)
+    }
+
+    func didTapSummaryToggle(index: Int) {
+        bookView.toggleSummary(bookIndex: index)
     }
 }
 

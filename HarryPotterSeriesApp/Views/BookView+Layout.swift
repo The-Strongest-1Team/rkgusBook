@@ -3,7 +3,7 @@ import SnapKit
 
 extension BookView {
     func setupHierarchy() {
-        [headerTitleLabel, seriesNumberButton].forEach { addSubview($0) }
+        [headerTitleLabel, seriesButtonsStackView].forEach { addSubview($0) }
         addSubview(scrollView)
         scrollView.addSubview(contentStackView)
 
@@ -33,6 +33,7 @@ extension BookView {
         chaptersTitleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
         }
+
         chaptersStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
         }
@@ -44,14 +45,14 @@ extension BookView {
             make.leading.trailing.equalToSuperview().inset(20)
         }
 
-        seriesNumberButton.snp.makeConstraints { make in
+        seriesButtonsStackView.snp.makeConstraints { make in
             make.top.equalTo(headerTitleLabel.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(40)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(40)
         }
 
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(seriesNumberButton.snp.bottom).offset(10)
+            make.top.equalTo(seriesButtonsStackView.snp.bottom).offset(10)
             make.leading.trailing.bottom.equalToSuperview()
         }
 

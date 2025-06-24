@@ -1,56 +1,47 @@
 import Foundation
 
 final class BookViewModel {
-    
-    private let dataService: DataServiceProtocol
     private(set) var books: [Book] = []
-    
-    private(set) var currentIndex = 0 {
-        didSet { onUpdate?() }
-    }
+    private(set) var currentIndex: Int = 0
 
     var onUpdate: (() -> Void)?
     var onError: ((String) -> Void)?
 
     var currentBook: Book? {
-        books.indices.contains(currentIndex) ? books[currentIndex] : nil
-    }
-
-    init(dataService: DataServiceProtocol = DataService()) {
-        self.dataService = dataService
+        guard books.indices.contains(currentIndex) else { return nil }
+        return books[currentIndex]
     }
 
     func fetchBooks() {
-        dataService.loadBooks { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let books):
-                    self?.books = books
-                    self?.currentIndex = 0
-                case .failure(let error):
-                    self?.onError?(error.localizedDescription)
-                }
-            }
+        guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else {
+            onError?("data.json 파일을 찾을 수 없습니다.")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode(BookResponse.self, from: data)
+            books = decoded.data.map { $0.attributes }
+            onUpdate?()
+        } catch {
+            onError?("데이터 파싱 오류: \(error.localizedDescription)")
         }
     }
 
-    func nextBook() {
-        guard !books.isEmpty else { return }
-        currentIndex = (currentIndex + 1) % books.count
+    func setBook(at index: Int) {
+        guard books.indices.contains(index) else { return }
+        currentIndex = index
+        onUpdate?()
     }
 
     func formattedDate() -> String? {
-        guard let dateString = currentBook?.release_date else { return nil }
-
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd"
-
-        guard let date = inputFormatter.date(from: dateString) else { return nil }
-
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateStyle = .medium
-        outputFormatter.timeStyle = .none
-
-        return outputFormatter.string(from: date)
+        guard let book = currentBook else { return nil }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let date = formatter.date(from: book.release_date) {
+            formatter.dateStyle = .long
+            return formatter.string(from: date)
+        }
+        return nil
     }
 }

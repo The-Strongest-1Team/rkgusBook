@@ -1,9 +1,23 @@
 import UIKit
 import SnapKit
 
+protocol BookViewDelegate: AnyObject {
+    func didTapSeriesButton(index: Int)
+    func didTapSummaryToggle(index: Int)
+}
+
 final class BookView: UIView {
+    weak var delegate: BookViewDelegate?
+
     lazy var headerTitleLabel = createLabel(font: .boldSystemFont(ofSize: 24), textColor: .black, numberOfLines: 0, textAlignment: .center)
-    lazy var seriesNumberButton = createButton(titleColor: .white, backgroundColor: .systemBlue, font: .boldSystemFont(ofSize: 18), cornerRadius: 20)
+
+    lazy var seriesButtonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
 
     let scrollView = UIScrollView()
     let contentStackView = UIStackView()
@@ -68,9 +82,39 @@ final class BookView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setupSeriesButtons(count: Int) {
+        for i in 0..<count {
+            let button = UIButton(type: .system)
+            button.setTitle("\(i + 1)", for: .normal)
+            button.setTitleColor(.systemBlue, for: .normal)
+            button.backgroundColor = .lightGray
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            button.layer.cornerRadius = 20
+            button.clipsToBounds = true
+            button.tag = i
+            button.addTarget(self, action: #selector(didTapSeriesButton(_:)), for: .touchUpInside)
+            
+            button.snp.makeConstraints { make in
+                make.width.height.equalTo(40)
+            }
+            seriesButtonsStackView.addArrangedSubview(button)
+        }
+    }
+
+    @objc private func didTapSeriesButton(_ sender: UIButton) {
+        delegate?.didTapSeriesButton(index: sender.tag)
+    }
+
+    func highlightSelectedButton(at index: Int) {
+        for (i, view) in seriesButtonsStackView.arrangedSubviews.enumerated() {
+            guard let button = view as? UIButton else { continue }
+            button.backgroundColor = (i == index) ? .systemBlue : .systemGray5
+            button.setTitleColor((i == index) ? .white : .systemBlue, for: .normal)
+        }
+    }
+
     func updateChapters(_ chapters: [String]) {
         chaptersStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-
         for chapter in chapters {
             let label = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray, numberOfLines: 0)
             label.text = chapter
@@ -110,4 +154,4 @@ final class BookView: UIView {
             summaryToggleButton.isHidden = true
         }
     }
-}
+} 
